@@ -21,7 +21,7 @@ jobs:
     - name: Ensure browsers are installed
       run: python -m playwright install --with-deps
     - name: Run your tests
-      run: python .\tests\google_test.py
+      run: python ./tests/google_test.py
     - uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
       with:
