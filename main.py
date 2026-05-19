@@ -7,5 +7,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 navigation = Navigation(BASE_URL)
-login_user(navigation)
-search_jobs(navigation)
+if login_user(navigation):
+    search_jobs(navigation)
+
+navigation.browser.close()

@@ -11,7 +11,18 @@ class LoginUserPage:
         email = os.getenv("EMAIL")
         password = os.getenv("PASSWORD")
 
-        self.navigation.send_text(selectors["email"], email)
-        self.navigation.send_text(selectors["password"], password)
-        self.navigation.click(selectors["button_submit"])
-        self.navigation.get_elements(selectors["nav_bar"])
+        self.navigation.page.get_by_role("textbox", name="E-mail ou telefone").fill(email)
+        self.navigation.page.get_by_role("textbox", name="Senha").fill(password)
+        self.navigation.page.get_by_role("button", name="Entrar", exact=True).click()
+
+        #         self.navigation.page.goto("https://www.linkedin.com/jobs/")
+        # self.navigation.page.get_by_test_id("typeahead-input").click()
+        # self.navigation.page.get_by_test_id("typeahead-input").fill("rpa")
+        # self.navigation.page.get_by_test_id("typeahead-input").press("Enter")
+    def check_is_logged(self):
+        try:
+            self.navigation.page.get_by_test_id("primary-nav")
+            return True
+        except Exception as e:
+            return False
+            
