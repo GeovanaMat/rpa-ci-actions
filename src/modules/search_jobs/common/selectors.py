@@ -1,0 +1,1 @@
+selectors = {"input_search": "input[data-testid='typeahead-input']"}
