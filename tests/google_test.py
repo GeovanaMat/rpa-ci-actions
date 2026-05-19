@@ -8,4 +8,7 @@ def test_google():
         page.goto("https://google.com")
         
         assert "Google" in page.title()
+        print("Page Title",page.title())
         browser.close()
+        
+test_google()
