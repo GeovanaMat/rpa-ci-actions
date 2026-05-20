@@ -23,7 +23,7 @@ class JobsPage:
                 "job_title": infos[1]
             })
             
-        self._save_jobs_in_csv(list_jobs=list_jobs)
+        return list_jobs
 
     def _save_jobs_in_csv(self,list_jobs):
         nome_arquivo = 'output.csv'
