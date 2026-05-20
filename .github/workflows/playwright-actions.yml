@@ -8,6 +8,7 @@ jobs:
   test:
     timeout-minutes: 60
     runs-on: ubuntu-latest
+    environment: Rpa-basic
     steps:
     - uses: actions/checkout@v5
     - name: Set up Python
